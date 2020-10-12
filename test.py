@@ -26,7 +26,7 @@ enemy_Y = 300
 enemy_change = -1
 
 #Bakgrund
-background = pygame.image.load("backgruond.png")
+#background = pygame.image.load("backgruond.png")
 
 def player(x,y):
     screen.blit(player_img,(x,y))
@@ -76,8 +76,9 @@ while running:
 
     #screen.fill behöver ligga överst i loopen, för att först ladda backgrunden.
     #RGB=red,green,blue value 0 -> 255(max)
-    screen.fill((100,100,150))
-    screen.blit(background,(0,0))
+
+    screen.fill((100,100,150)) #Behövs ej om vi andvänder background.
+    #screen.blit(background,(0,0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
