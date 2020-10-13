@@ -1,6 +1,8 @@
 #functions tester för kolision, och prompt.
 import pygame
 #import time
+from get_quiz import get_quiz
+
 pygame.init()
 clock = pygame.time.Clock()
 run = True
@@ -79,7 +81,11 @@ def answer_display(text):
 def crash(text):
     run = True
     while run:
-    #message_display('Frågor på det?','[y] or n]')
+        lista = []
+        quiz_promp,quiz_rans,quiz_wans = get_quiz()
+        lista.append(quiz_rans)
+        for wA in quiz_wans:
+            lista.append(wA)
         message_window = pygame.Surface([400,100])
         largeText = pygame.font.Font('freesansbold.ttf',20)
         TextSurf, TextRect = text_objects(text, largeText)
